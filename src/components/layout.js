@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
     container,
-    heading,
+    headingtitle,
     navLinks,
     navLinkItem,
     navLinkText,
@@ -43,7 +43,7 @@ const Layout = ({ pageTitle, children }) => {
                 </ul>
             </nav>
             <main>
-                <h1 className={heading}>{pageTitle}</h1>
+                <h1 className={headingtitle}>{pageTitle}</h1>
                 {children}
             </main>
         </div>
