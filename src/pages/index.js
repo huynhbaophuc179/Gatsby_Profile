@@ -2,18 +2,24 @@ import React, { useState, useEffect } from "react";
 import "../../css/app.scss";
 import Layout from '../components/layout'
 import { fadeInUp } from "react-animations";
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import SmoothScroll from "../components/SmoothScroll";
+import { motion } from "framer-motion"
 function IndexPage() {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
   useEffect(() => {
+
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const renderContent = () => (
+
+
+  const RenderContent = () => (
     <>
       <div className="overlay">
         <div className="Parallax__content__heading">
@@ -43,16 +49,19 @@ function IndexPage() {
 
   return (
     // <Layout pageTitle={"HI"} >
-    <div>
+
+    <div >
       <section className="Parallax">
         <div
           className="Parallax__background"
           style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
         />
-
-        <div className="Parallax__content">{renderContent()}</div>
+        <SmoothScroll>
+          <div className="Parallax__content">{RenderContent()}</div>\
+        </SmoothScroll >
       </section>
     </div>
+
     // </Layout>
   );
 }
