@@ -50,14 +50,12 @@ function IndexPage() {
   return (
     // <Layout pageTitle={"HI"} >
 
-    <div >
+    <div className="Parallax__background"
+    >
       <section className="Parallax">
-        <div
-          className="Parallax__background"
-          style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
-        />
+
         <SmoothScroll>
-          <div className="Parallax__content">{RenderContent()}</div>\
+          <div className="Parallax__content">{RenderContent()}</div>
         </SmoothScroll >
       </section>
     </div>
